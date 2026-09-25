@@ -12,6 +12,7 @@ bridge AI 主催コンテスト「GEMBA AI Challenge」のケース設計に関�
 | --- | --- |
 | [phase2/01-case-deepdive.md](phase2/01-case-deepdive.md) | 2ケースの選定理由、舞台・登場人物・記録の流れ、配布用ケース文 |
 | [phase2/02-data-design.md](phase2/02-data-design.md) | 用意するデータの一覧と形式、仕込む不整合と「隠された正解」、公開の段階、制作の段取り |
+| [phase2/03-regulation-cases.md](phase2/03-regulation-cases.md) | 制度起点のケース文 試作4本（熱中症・カスハラ・介護BCP・医師の働き方） |
 
 ## フェーズ1：テーマ設計
 
@@ -29,6 +30,7 @@ bridge AI 主催コンテスト「GEMBA AI Challenge」のケース設計に関�
 | [research/01-hackathon-cases.md](research/01-hackathon-cases.md) | 国内外AIハッカソン14件のケース事例（出典付き） |
 | [research/02-hackathon-themes.md](research/02-hackathon-themes.md) | 上記から抽出したテーマ一覧 |
 | [research/03-sponsor-research.md](research/03-sponsor-research.md) | スポンサーアタックリストの企業調査、業界構造の整理、テーマ案6つ |
+| [research/04-regulation-changes.md](research/04-regulation-changes.md) | 近年の法改正13件による「記録義務」の一覧。HACCP型の制度を業界横断で洗い出したもの |
 
 ## 共通
 
