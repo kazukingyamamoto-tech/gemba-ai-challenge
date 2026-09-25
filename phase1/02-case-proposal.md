@@ -2,6 +2,8 @@
 
 作成：bridge AI　2026-09-18
 
+> 専門用語（HACCP、GAP、デジタコ、改善基準告示 など）は [`glossary.md`](../glossary.md) を参照。
+
 ---
 
 ## 1. ダミーケースの作り方

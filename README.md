@@ -2,11 +2,36 @@
 
 bridge AI 主催コンテスト「GEMBA AI Challenge」のケース設計に関する作業資料。
 
+**現在：フェーズ2（採用ケースの作り込みとダミーデータ準備）**
+
+## フェーズ2：ケースの作り込みとデータ準備（進行中）
+
+採用した2ケース（3-1 惣菜工場 / 3-3 農業法人）を深掘りし、配布するダミーデータを設計する。
+
 | ファイル | 内容 |
 | --- | --- |
-| [data-prep.md](data-prep.md) | **ダミーデータ準備計画**：3-1／3-3の選定理由、ケースの作り込み、用意するデータの概要・形式 |
-| [proposal.md](proposal.md) | **提出資料**：ケースの作り方、テーマ案3つ、ケース文9本 |
-| [sponsor.md](sponsor.md) | スポンサーアタックリストの調査と、刺さる業界構造の整理 |
-| [case.md](case.md) | 初期のダミーケース3本（町工場・介護・建設） |
-| [theme.md](theme.md) | 他ハッカソンのテーマ一覧 |
-| [processing.md](processing.md) | 他ハッカソンのケース事例リサーチ（出典付き） |
+| [phase2/01-case-deepdive.md](phase2/01-case-deepdive.md) | 2ケースの選定理由、舞台・登場人物・記録の流れ、配布用ケース文 |
+| [phase2/02-data-design.md](phase2/02-data-design.md) | 用意するデータの一覧と形式、仕込む不整合と「隠された正解」、公開の段階、制作の段取り |
+
+## フェーズ1：テーマ設計
+
+ケースの型を定め、テーマ案を絞り込んだ段階。
+
+| ファイル | 内容 |
+| --- | --- |
+| [phase1/02-case-proposal.md](phase1/02-case-proposal.md) | **提出資料**：ケースの作り方、テーマ案3つ、ケース文9本 |
+| [phase1/01-initial-cases.md](phase1/01-initial-cases.md) | 初期のダミーケース3本（町工場・介護・建設）。現在は不採用 |
+
+## リサーチ
+
+| ファイル | 内容 |
+| --- | --- |
+| [research/01-hackathon-cases.md](research/01-hackathon-cases.md) | 国内外AIハッカソン14件のケース事例（出典付き） |
+| [research/02-hackathon-themes.md](research/02-hackathon-themes.md) | 上記から抽出したテーマ一覧 |
+| [research/03-sponsor-research.md](research/03-sponsor-research.md) | スポンサーアタックリストの企業調査、業界構造の整理、テーマ案6つ |
+
+## 共通
+
+| ファイル | 内容 |
+| --- | --- |
+| [glossary.md](glossary.md) | 用語集（HACCP、JGAP、PHI、デジタコ、M&A、非構造データ など） |
