@@ -29,7 +29,7 @@ bridge AI 主催コンテスト「GEMBA AI Challenge」のケース設計に関�
 | --- | --- |
 | [research/01-hackathon-cases.md](research/01-hackathon-cases.md) | 国内外AIハッカソン14件のケース事例（出典付き） |
 | [research/02-hackathon-themes.md](research/02-hackathon-themes.md) | 上記から抽出したテーマ一覧 |
-| [research/03-sponsor-research.md](research/03-sponsor-research.md) | スポンサーアタックリストの企業調査、業界構造の整理、テーマ案6つ |
+| [research/03-sponsor-research.md](research/03-sponsor-research.md) | スポンサーアタックリストの企業調査、業界構造の整理、テーマ案6つ |<!--private-->
 | [research/04-regulation-changes.md](research/04-regulation-changes.md) | 近年の法改正13件による「記録義務」の一覧。HACCP型の制度を業界横断で洗い出したもの |
 
 ## 共通
