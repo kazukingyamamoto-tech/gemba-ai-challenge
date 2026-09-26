@@ -6,6 +6,9 @@
 
 > 専門用語は [`glossary.md`](../glossary.md) を参照。
 > 制度の調査は [`research/04-regulation-changes.md`](../research/04-regulation-changes.md)。
+>
+> **採否（2026-09-26）**：案B（カスハラ）と案C（介護BCP）を採用し、[`share/case-list.md`](../share/case-list.md) に収録。
+> 案A（熱中症）と案D（医師の働き方）は見送り。差し替え候補として本ファイルに残す。
 
 ---
 
