@@ -29,7 +29,6 @@ bridge AI 主催コンテスト「GEMBA AI Challenge」のケース設計に関�
 | --- | --- |
 | [research/01-hackathon-cases.md](research/01-hackathon-cases.md) | 国内外AIハッカソン14件のケース事例（出典付き） |
 | [research/02-hackathon-themes.md](research/02-hackathon-themes.md) | 上記から抽出したテーマ一覧 |
-| [research/03-sponsor-research.md](research/03-sponsor-research.md) | スポンサーアタックリストの企業調査、業界構造の整理、テーマ案6つ |<!--private-->
 | [research/04-regulation-changes.md](research/04-regulation-changes.md) | 近年の法改正13件による「記録義務」の一覧。HACCP型の制度を業界横断で洗い出したもの |
 
 ## 共通
@@ -37,3 +36,9 @@ bridge AI 主催コンテスト「GEMBA AI Challenge」のケース設計に関�
 | ファイル | 内容 |
 | --- | --- |
 | [glossary.md](glossary.md) | 用語集（HACCP、JGAP、PHI、デジタコ、M&A、非構造データ など） |
+
+---
+
+スポンサー候補企業の調査（`research/03-sponsor-research.md`）は `.gitignore` で除外し、ローカルのみで管理しています。企業名を扱う記述は、このファイル以外には置かないでください。
+
+運営メンバーへの共有は、必要なmdをPDF等に書き出して都度渡す方針です。
