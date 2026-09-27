@@ -246,8 +246,7 @@
 
 | 文書 | 対応 | 状態 |
 | --- | --- | --- |
-| [`02-data-design.md`](02-data-design.md) | 「隠された正解」の呼称を「仕込んだ現象」に改め、採点に使わないことを明記。ホールドアウトを「別期間データ」に格下げ | 済 |
-| [`02-data-design.md`](02-data-design.md) | ファイル一覧に、本ファイルで追加を決めた型（アプリ操作ログ・気象・不適合記録・写真・音声・LINE・手書き日誌・取引基準書）を反映 | **未** |
+| [`02-data-design.md`](02-data-design.md) | 本ファイルの型構成をファイル単位に落とし込み済み（全20ファイル前後 × 2ケース） | 済 |
 | [`03-regulation-cases.md`](03-regulation-cases.md) | 4本すべて見送りとなったことを明記し、差し替え候補として保持 | 済 |
 | [`01-case-deepdive.md`](01-case-deepdive.md) ／ [`../share/case-list.md`](../share/case-list.md) | 2ケースに絞り、ケース文のデータ記述を更新 | 済 |
 | [`../glossary.md`](../glossary.md) | 「正解ラベル」「結果の記録」を追加。ホールドアウトの説明を改めた | 済 |
