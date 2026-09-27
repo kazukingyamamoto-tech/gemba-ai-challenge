@@ -12,6 +12,7 @@ bridge AI 主催コンテスト「GEMBA AI Challenge」のケース設計に関�
 | --- | --- |
 | [phase2/01-case-deepdive.md](phase2/01-case-deepdive.md) | **ケース設計の考え方**（型・成功の形の基準・審査の優先順位）と、3-1/3-3の舞台・配布用ケース文 |
 | [phase2/02-data-design.md](phase2/02-data-design.md) | 用意するデータの一覧と形式、仕込む不整合と「隠された正解」、公開の段階、制作の段取り |
+| [phase2/04-data-types.md](phase2/04-data-types.md) | **データ型の設計**：12型の棚卸し、技術レベル4段、4ケース分の構成と「到達できる線」 |
 | [phase2/03-regulation-cases.md](phase2/03-regulation-cases.md) | 制度起点のケース文 試作4本。カスハラ・介護BCPを採用、熱中症・医師の働き方は見送り |
 
 ## フェーズ1：テーマ設計
