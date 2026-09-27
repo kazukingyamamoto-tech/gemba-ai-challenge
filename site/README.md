@@ -13,6 +13,19 @@
 
 **main へのマージは、即座に公開サイトへ反映される。**
 
+## 大前提：承認前に公開リポジトリを触らない
+
+**ユーザーが下書きの内容を承認するまで、`ai-business-contest-lp` へのコミット・push・ブランチ作成・PR作成は行わない。** 読み取り（clone・fetch・log・閲覧）は自由。
+
+順序は次の通り。
+
+| 段 | 場所 | 作業 |
+| --- | --- | --- |
+| 1 | `site/`（このリポジトリ） | 下書きを作る。ここは自由に試してよい |
+| 2 | — | **ユーザーが内容を承認する** |
+| 3 | `ai-business-contest-lp` | ブランチを切ってコミット・push、PR作成 |
+| 4 | — | **人がマージする**（＝公開） |
+
 ## ai-business-contest-lp での規約
 
 | 項目 | ルール |
@@ -20,7 +33,7 @@
 | ブランチ名 | `agent/<kebab-case-の内容>`（既存の `agent/improve-header-logo` を踏襲） |
 | コミットメッセージ | **英語・命令形・先頭大文字・接頭辞なし**。既存18件の形式に合わせる<br>例：`Add case section with two field cases` / `Update overview with entry dates` |
 | 帰属行 | `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` のみ。**Claude-Session の URL は付けない**（非公開リンクを公開履歴に残さないため） |
-| PR | エージェントは **PR の作成まで**。マージは人が行う |
+| PR | **承認後に**ブランチを切り、PR の作成まで。マージは人が行う |
 | PR 本文 | 末尾に `🤖 Generated with [Claude Code](https://claude.com/claude-code)` |
 
 ## 公開リポジトリに載せないもの
@@ -39,7 +52,7 @@ LP に載せるのは**配布用ケース文と成功の形**まで。
 1. `site/index.html` を編集する（公開版と同じ相対パス構成なので、そのままコピーできる）
 2. ローカルで確認する。`site/images` は `ai-business-contest-lp/images` へのシンボリックリンク（gitignore 済み。画像の正は公開リポジトリ側）
 3. スマホで見る必要があれば、画像を data URI にした確認用の複製を作って Artifact で公開する
-4. 固まったら `ai-business-contest-lp` でブランチを切り、`index.html` を差し替えて PR を作る
+4. **ユーザーの承認を得てから** `ai-business-contest-lp` でブランチを切り、`index.html` を差し替えて PR を作る
 
 ## 参照元
 
