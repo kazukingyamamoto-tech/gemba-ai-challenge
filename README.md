@@ -31,6 +31,13 @@ bridge AI 主催コンテスト「GEMBA AI Challenge」のケース設計に関�
 | [research/02-hackathon-themes.md](research/02-hackathon-themes.md) | 上記から抽出したテーマ一覧 |
 | [research/04-regulation-changes.md](research/04-regulation-changes.md) | 近年の法改正13件による「記録義務」の一覧。HACCP型の制度を業界横断で洗い出したもの |
 
+## サイト（LP）
+
+| ファイル | 内容 |
+| --- | --- |
+| [site/README.md](site/README.md) | **LP作業のルール**：リポジトリの役割分担、ブランチ・コミット規約、公開してはいけないもの |
+| [site/index.html](site/index.html) | 公式LPの下書き（公開先は bri-dge-ai/ai-business-contest-lp） |
+
 ## 共有資料
 
 | ファイル | 内容 |

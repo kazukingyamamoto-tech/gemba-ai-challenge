@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GEMBA AI Challenge｜価値創出のためのAI活用ビジネスコンテスト</title>
+<meta name="description" content="GEMBA AI Challengeは、AIやデータサイエンスに興味のある学生を対象とした、価値創出のためのAI活用ビジネスコンテストです。2026年11月28日（土）・29日（日）、麻布台ヒルズにて2日間開催予定。">
+<link rel="icon" type="image/png" href="images/gemba_ai_favicon_outlined.png">
+<link rel="apple-touch-icon" href="images/gemba_ai_favicon_outlined.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TKCYPRG92N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TKCYPRG92N');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-rgb: 255, 255, 255;
+    --surface: #f4f6f8;
+    --ink: #10171c;
+    --ink-soft: #6f6f6f;
+    --blue: #0874bb;
+    --navy: #003580;
+    --line: rgba(16, 23, 28, 0.12);
+    --shadow: rgba(16, 23, 28, 0.06);
+
+    --font-body: "IBM Plex Sans JP", "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", -apple-system, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #071322;
+      --bg-rgb: 7, 19, 34;
+      --surface: #0d1f33;
+      --ink: #eaf1f8;
+      --ink-soft: #9fb0c0;
+      --blue: #35a7e6;
+      --navy: #5b7fd1;
+      --line: rgba(234, 241, 248, 0.14);
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #071322;
+    --bg-rgb: 7, 19, 34;
+    --surface: #0d1f33;
+    --ink: #eaf1f8;
+    --ink-soft: #9fb0c0;
+    --blue: #35a7e6;
+    --navy: #5b7fd1;
+    --line: rgba(234, 241, 248, 0.14);
+    --shadow: rgba(0, 0, 0, 0.35);
+  }
+
+  :root[data-theme="light"] {
+    --bg: #ffffff;
+    --bg-rgb: 255, 255, 255;
+    --surface: #f4f6f8;
+    --ink: #10171c;
+    --ink-soft: #6f6f6f;
+    --blue: #0874bb;
+    --navy: #003580;
+    --line: rgba(16, 23, 28, 0.12);
+    --shadow: rgba(16, 23, 28, 0.06);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, svg { max-width: 100%; }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 56px);
+  }
+
+  /* ---------- Header visual ---------- */
+  .skyline {
+    position: relative;
+    height: clamp(340px, 42vw, 520px);
+    overflow: hidden;
+    isolation: isolate;
+    background: url('images/header-v2.png') 64% center / cover no-repeat;
+  }
+  .skyline::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(var(--bg-rgb), 0.70) 0%,
+      rgba(var(--bg-rgb), 0.70) 52%,
+      rgba(var(--bg-rgb), 0.52) 60%,
+      rgba(var(--bg-rgb), 0.22) 69%,
+      rgba(var(--bg-rgb), 0) 79%
+    );
+  }
+  .skyline-logo {
+    position: absolute;
+    left: max(20px, calc((100% - 1280px) / 2));
+    top: 50%;
+    width: clamp(380px, 42vw, 580px);
+    transform: translateY(-50%);
+  }
+  .skyline-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  @media (prefers-color-scheme: dark) {
+    .skyline-logo img {
+      filter: brightness(0) invert(1);
+    }
+  }
+  :root[data-theme="dark"] .skyline-logo img {
+    filter: brightness(0) invert(1);
+  }
+  :root[data-theme="light"] .skyline-logo img {
+    filter: none;
+  }
+  @media (max-width: 560px) {
+    .skyline {
+      height: 360px;
+      background-position: 60% top;
+    }
+    .skyline::before {
+      background: linear-gradient(
+        0deg,
+        rgba(var(--bg-rgb), 0.70) 0%,
+        rgba(var(--bg-rgb), 0.70) 40%,
+        rgba(var(--bg-rgb), 0.48) 50%,
+        rgba(var(--bg-rgb), 0) 72%
+      );
+    }
+    .skyline-logo {
+      left: 12px;
+      top: auto;
+      bottom: 12px;
+      width: calc(100% - 24px);
+      transform: none;
+    }
+  }
+
+  /* ---------- Header ---------- */
+  header.hero {
+    position: relative;
+  }
+  .hero-inner {
+    position: relative;
+    padding: clamp(56px, 10vw, 120px) 0 clamp(40px, 6vw, 64px);
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink-soft);
+  }
+  .badge--accent {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  h1 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 5.4vw, 3.9rem);
+    line-height: 1.32;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--blue);
+  }
+
+  .subtitle {
+    max-width: 34em;
+    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0 0 14px;
+  }
+
+  .tagline {
+    max-width: 34em;
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    color: var(--ink-soft);
+    margin: 0 0 44px;
+  }
+
+  /* ---------- Sections ---------- */
+  section {
+    padding: clamp(48px, 8vw, 88px) 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin: 0 0 14px;
+  }
+
+  h2 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    max-width: 42em;
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  .lede + .lede { margin-top: 1.2em; }
+
+  /* concept */
+  .concept-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  @media (min-width: 720px) {
+    .concept-grid { grid-template-columns: 1.1fr 0.9fr; align-items: start; }
+  }
+  .concept-mark {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    letter-spacing: -0.02em;
+    color: var(--blue);
+    line-height: 1;
+    border-left: 2px solid var(--blue);
+    padding-left: 20px;
+  }
+
+  /* overview table */
+  .facts {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.98rem;
+  }
+  .facts tr { border-top: 1px solid var(--line); }
+  .facts tr:last-child { border-bottom: 1px solid var(--line); }
+  .facts th, .facts td {
+    text-align: left;
+    padding: 16px 12px;
+    font-weight: 400;
+  }
+  .facts th {
+    width: 9em;
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    vertical-align: top;
+    padding-top: 18px;
+  }
+  .cond-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cond-list li {
+    position: relative;
+    padding-left: 18px;
+  }
+  .cond-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--ink-soft);
+  }
+
+  /* difference */
+  .point-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .point-list li {
+    position: relative;
+    padding-left: 28px;
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    line-height: 1.75;
+    max-width: 42em;
+  }
+  .point-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+  }
+
+  /* case */
+  .case-quote {
+    margin: 0 0 32px;
+    padding: 28px 32px;
+    border-left: 3px solid var(--blue);
+    background: var(--surface);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    line-height: 1.75;
+    color: var(--ink);
+  }
+
+  /* timeline */
+  .timeline {
+    margin-top: 44px;
+    display: grid;
+    gap: 2px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .timeline .day {
+    background: var(--surface);
+    padding: 26px 24px;
+  }
+  .timeline .day-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .day-slot {
+    display: flex;
+    gap: 14px;
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+    font-size: 0.94rem;
+  }
+  .day-slot:first-of-type {
+    border-top: none;
+    padding-top: 10px;
+  }
+  .day-slot .slot-time {
+    flex: 0 0 3.2em;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    padding-top: 2px;
+  }
+  .day-slot .slot-desc { flex: 1; }
+  .timeline .day--judge .day-label { color: var(--navy); }
+
+  .subhead {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+    margin: 52px 0 20px;
+  }
+
+  /* entry / CTA */
+  .entry {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 26px;
+    border: 1px solid var(--blue);
+    color: var(--ink);
+  }
+  .entry .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--blue);
+    flex-shrink: 0;
+  }
+  .entry strong { font-weight: 600; }
+
+  /* Community */
+  .slack-card,
+  .line-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 32px;
+    padding: 20px 24px;
+    max-width: 480px;
+    border: 1px solid var(--blue);
+    background: var(--surface);
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .slack-card {
+    background: var(--blue);
+    color: #fff;
+  }
+  .slack-card:hover { background: var(--navy); }
+  .line-card:hover { border-color: var(--navy); }
+  .slack-card-mark {
+    position: relative;
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+  }
+  .slack-logo,
+  .gemba-logo {
+    position: absolute;
+    display: block;
+    object-fit: contain;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(16, 23, 28, 0.18);
+  }
+  .slack-logo {
+    left: 6px;
+    top: 6px;
+    width: 78px;
+    height: 78px;
+    padding: 17px;
+    border-radius: 20px;
+  }
+  .gemba-logo {
+    right: 6px;
+    bottom: 6px;
+    width: 52px;
+    height: 52px;
+    padding: 3px;
+    border: 3px solid #fff;
+    border-radius: 16px;
+  }
+  .line-card-qr {
+    flex-shrink: 0;
+    display: block;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+  .line-card-qr img { display: block; }
+  .slack-card-text,
+  .line-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .slack-card-text strong,
+  .line-card-text strong {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+  }
+  .slack-card-text span,
+  .line-card-text span {
+    font-size: 0.85rem;
+  }
+  .slack-card-text span {
+    color: rgba(255, 255, 255, 0.82);
+  }
+  .line-card-text span {
+    color: var(--ink-soft);
+  }
+  .community-subhead {
+    margin: 44px 0 0;
+    font-size: 1.15rem;
+  }
+  @media (max-width: 480px) {
+    .slack-card,
+    .line-card {
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px;
+    }
+    .slack-card-mark,
+    .line-card-qr img {
+      width: 88px;
+      height: 88px;
+    }
+    .slack-logo {
+      left: 2px;
+      top: 2px;
+      width: 60px;
+      height: 60px;
+      padding: 13px;
+      border-radius: 16px;
+    }
+    .gemba-logo {
+      right: 2px;
+      bottom: 2px;
+      width: 42px;
+      height: 42px;
+      padding: 2px;
+      border-width: 2px;
+      border-radius: 13px;
+    }
+  }
+
+  /* footer */
+  footer {
+    padding: 40px 0 60px;
+    border-top: 1px solid var(--line);
+  }
+  footer .org {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+  footer .disclaimer {
+    max-width: 46em;
+    font-size: 0.84rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  footer .copyright {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.03em;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="skyline" role="img" aria-label="AIを活用して現場の課題解決に取り組む学生チーム">
+    <div class="skyline-logo">
+      <img src="images/gemba_ai_logo_transparent.png" alt="GEMBA AI Challenge">
+    </div>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="badges">
+      <span class="badge badge--accent">2026.11.28–29</span>
+    </div>
+    <h1>GEMBA<br><em>AI Challenge</em></h1>
+    <p class="subtitle">価値創出のためのAI活用ビジネスコンテスト</p>
+    <p class="tagline">AIやデータサイエンスを学ぶ学生が、ビジネスとしての実装力を競う2日間。1日目はプログラムを通じてアイデアを磨き、2日目に審査・発表を行います。</p>
+  </div>
+</header>
+
+<main>
+
+  <section id="background">
+    <div class="wrap">
+      <p class="eyebrow">Background</p>
+      <h2>開催背景</h2>
+      <p class="lede">生成AIをはじめとする技術は、かつてないスピードで社会に実装されつつあります。</p>
+      <p class="lede">いま現場で求められているのは、AIの知識そのものではなく、それを「課題を解決する手段」として使いこなす力です。そうした力は、座学だけでは身につきません。実際の課題に向き合い、試行錯誤を重ねる実践の中でこそ養われます。</p>
+      <p class="lede">本イベントは、最新のAIトレンドを実課題に接続し、文理の枠を超えた視点で学びを深める機会として開催します。</p>
+    </div>
+  </section>
+
+  <section id="concept">
+    <div class="wrap concept-grid">
+      <div>
+        <p class="eyebrow">Concept</p>
+        <h2>AIを、<br>現場の価値へ。</h2>
+        <p class="lede">AIやデータサイエンスの知見を学んだ先にある「ビジネスとして形にする力」を競う場をつくります。技術の理解だけでなく、それを事業としてどう構想し、どう伝えるか。学生同士がアイデアと実装力をぶつけ合う2日間です。</p>
+      </div>
+      <div class="concept-mark">AI<br>×<br>Biz</div>
+    </div>
+  </section>
+
+  <section id="difference">
+    <div class="wrap">
+      <p class="eyebrow">Difference</p>
+      <h2>従来のビジネスコンテストと違うポイント</h2>
+      <ul class="point-list">
+        <li>データサイエンスやAIを学んでいる学生を対象としていること</li>
+        <li>データ分析やアプリのプロトタイプ開発を組み込んだビジコンであること</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="case">
+    <div class="wrap">
+      <p class="eyebrow">Case</p>
+      <h2>ケース<span class="badge" style="margin-left:10px;">暫定</span></h2>
+      <blockquote class="case-quote">
+        クライアント企業の現場課題を特定し、データ分析やAI実装を通じて、営業利益率の改善を促すビジネスアイデアを創出せよ。
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="overview">
+    <div class="wrap">
+      <p class="eyebrow">Overview</p>
+      <h2>開催概要</h2>
+      <table class="facts">
+        <tr>
+          <th>日時</th>
+          <td>2026年11月28日（土）・29日（日）の2日間</td>
+        </tr>
+        <tr>
+          <th>会場</th>
+          <td>麻布台ヒルズ<span class="badge" style="margin-left:8px;">予定</span></td>
+        </tr>
+        <tr>
+          <th>参加費</th>
+          <td>2,000円</td>
+        </tr>
+        <tr>
+          <th>参加条件</th>
+          <td>
+            <p style="margin:0 0 8px;"><span class="badge">必須</span></p>
+            <ul class="cond-list">
+              <li>学生であること</li>
+              <li>事前イベントおよび2日間の予定に参加できること</li>
+              <li>使用可能なパソコンを持っていること</li>
+              <li>AIやデータサイエンスのビジネス現場への利活用に興味があること</li>
+            </ul>
+            <p style="margin:16px 0 8px;"><span class="badge">歓迎</span></p>
+            <ul class="cond-list">
+              <li>統計・機械学習・エンジニアリングなどのスキル</li>
+              <li>コンペ・ハッカソンの経験</li>
+              <li>ビジネスコンテスト・グループディスカッションの経験</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>主催</th>
+          <td>GEMBA AI Challenge 運営チーム</td>
+        </tr>
+      </table>
+
+      <h3 class="subhead">タイムライン<span class="badge" style="margin-left:10px;">想定</span></h3>
+      <div class="timeline">
+        <div class="day">
+          <p class="day-label">Day 1</p>
+          <div class="day-slot">
+            <span class="slot-time">午前</span>
+            <span class="slot-desc">開会式・事前勉強会</span>
+          </div>
+          <div class="day-slot">
+            <span class="slot-time">午後</span>
+            <span class="slot-desc">プランニング・中間フィードバック</span>
+          </div>
+        </div>
+        <div class="day day--judge">
+          <p class="day-label">Day 2</p>
+          <div class="day-slot">
+            <span class="slot-time">午前</span>
+            <span class="slot-desc">プランニング</span>
+          </div>
+          <div class="day-slot">
+            <span class="slot-time">午後</span>
+            <span class="slot-desc">プレゼン準備・最終発表・閉会式・交流会</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry" style="margin-top:32px;">
+        <span class="dot" aria-hidden="true"></span>
+        <span><strong>参加登録の受付は近日開始予定です。</strong>詳細が決まり次第、本ページにて公開します。</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="community">
+    <div class="wrap">
+      <p class="eyebrow">Community</p>
+      <h2>公式Slackコミュニティ</h2>
+      <p class="lede">GEMBA AI Challengeの公開コミュニティです。イベントに関する案内や参加者同士の交流をSlackで行います。参加を検討中の方も、ぜひお気軽にご参加ください。</p>
+      <a class="slack-card" href="community/" target="_blank" rel="noopener">
+        <span class="slack-card-mark" aria-hidden="true">
+          <img class="slack-logo" src="images/slack-mark.svg" alt="">
+          <img class="gemba-logo" src="images/gemba_ai_favicon_outlined.png" alt="">
+        </span>
+        <span class="slack-card-text">
+          <strong>公式Slackに参加する</strong>
+          <span>無料でどなたでも参加できます</span>
+        </span>
+      </a>
+
+      <h3 class="community-subhead">最新情報を受け取る</h3>
+      <p class="lede">公式LINEでは、日程・会場・参加登録開始などの確定情報を随時配信します。</p>
+      <a class="line-card" href="https://lin.ee/umiDVc6" target="_blank" rel="noopener">
+        <span class="line-card-qr">
+          <img src="https://qr-official.line.me/gs/M_093pehuy_BW.png?oat_content=qr" alt="公式LINE友だち追加QRコード" width="120" height="120">
+        </span>
+        <span class="line-card-text">
+          <strong>友だち追加はこちら</strong>
+          <span>QRコードを読み取るか、画像をタップして追加</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="org">主催：GEMBA AI Challenge 運営チーム</p>
+    <p class="disclaimer">本ページは2026年8月時点の情報です。会場・参加費を含む一部の記載内容は、確定次第あらためてお知らせします。</p>
+    <p class="copyright">© 2026 GEMBA AI Challenge 運営チーム</p>
+  </div>
+</footer>
+
+</body>
+</html>
