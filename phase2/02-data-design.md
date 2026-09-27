@@ -1,7 +1,7 @@
 # 用意するデータの設計（ケース 3-1 / 3-3）
 
 作成：bridge AI
-前提：[`01-case-deepdive.md`](01-case-deepdive.md) で作り込んだ2ケースに対し、配布するダミーデータを設計する。どの型をどれだけ入れるかの方針は [`04-data-types.md`](04-data-types.md)。
+前提：[`01-case-deepdive.md`](01-case-deepdive.md) で作り込んだ2ケースに対し、配布するダミーデータを設計する。どの型をどれだけ入れるかの方針は [`03-data-types.md`](03-data-types.md)。
 
 > 専門用語（HACCP、JGAP、PHI など）は [`glossary.md`](../glossary.md) を参照。
 
