@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2日間の流れ｜GEMBA AI Challenge</title>
+<meta name="description" content="GEMBA AI Challengeの2日間の流れ。事前プログラムからケース発表、データの読み合わせ、中間フィードバック、実装、最終発表までのタイムテーブルを紹介します。">
+<link rel="icon" type="image/png" href="../images/gemba_ai_favicon_outlined.png">
+<link rel="apple-touch-icon" href="../images/gemba_ai_favicon_outlined.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TKCYPRG92N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TKCYPRG92N');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-rgb: 255, 255, 255;
+    --surface: #f4f6f8;
+    --ink: #10171c;
+    --ink-soft: #6f6f6f;
+    --blue: #0874bb;
+    --navy: #003580;
+    --line: rgba(16, 23, 28, 0.12);
+    --shadow: rgba(16, 23, 28, 0.06);
+
+    --font-body: "IBM Plex Sans JP", "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", -apple-system, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #071322;
+      --bg-rgb: 7, 19, 34;
+      --surface: #0d1f33;
+      --ink: #eaf1f8;
+      --ink-soft: #9fb0c0;
+      --blue: #35a7e6;
+      --navy: #5b7fd1;
+      --line: rgba(234, 241, 248, 0.14);
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #071322;
+    --bg-rgb: 7, 19, 34;
+    --surface: #0d1f33;
+    --ink: #eaf1f8;
+    --ink-soft: #9fb0c0;
+    --blue: #35a7e6;
+    --navy: #5b7fd1;
+    --line: rgba(234, 241, 248, 0.14);
+    --shadow: rgba(0, 0, 0, 0.35);
+  }
+
+  :root[data-theme="light"] {
+    --bg: #ffffff;
+    --bg-rgb: 255, 255, 255;
+    --surface: #f4f6f8;
+    --ink: #10171c;
+    --ink-soft: #6f6f6f;
+    --blue: #0874bb;
+    --navy: #003580;
+    --line: rgba(16, 23, 28, 0.12);
+    --shadow: rgba(16, 23, 28, 0.06);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, svg { max-width: 100%; }
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 56px);
+  }
+
+  /* ---------- Page header ---------- */
+  .pagebar {
+    border-bottom: 1px solid var(--line);
+  }
+  .pagebar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .pagebar-logo img {
+    display: block;
+    height: 34px;
+    width: auto;
+  }
+  .backlink {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 16px;
+    white-space: nowrap;
+  }
+  .backlink:hover { color: var(--blue); border-color: var(--blue); }
+  .backlink:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+  /* ---------- Page lede ---------- */
+  .pagehead {
+    padding: clamp(44px, 7vw, 80px) 0 clamp(28px, 4vw, 44px);
+  }
+  .pagehead h1 {
+    font-weight: 700;
+    font-size: clamp(1.9rem, 4.4vw, 2.9rem);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .pagehead h1 em {
+    font-style: normal;
+    color: var(--blue);
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding: clamp(40px, 6vw, 72px) 0; }
+  section + section { border-top: 1px solid var(--line); }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin: 0 0 14px;
+  }
+  h2 {
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+  h3.subhead {
+    font-weight: 600;
+    font-size: 1.06rem;
+    margin: 40px 0 16px;
+    letter-spacing: 0.01em;
+  }
+  .lede {
+    max-width: 42em;
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .lede + .lede { margin-top: 1.2em; }
+
+  .badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .badge--accent {
+    color: var(--blue);
+    border-color: var(--blue);
+  }
+
+  /* ---------- Shape: three stages ---------- */
+  .stages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .stage {
+    background: var(--surface);
+    border-radius: 14px;
+    padding: 24px 22px;
+  }
+  .stage-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 0 0 10px;
+  }
+  .stage h3 {
+    font-size: 1.02rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+  .stage p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Rundown ---------- */
+  .dayhead {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 0 0 6px;
+  }
+  .dayhead .num {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+  }
+  .dayhead h2 { margin: 0; }
+  .daynote {
+    margin: 10px 0 0;
+    font-size: 0.96rem;
+    color: var(--ink-soft);
+  }
+
+  .rundown {
+    margin-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .slot {
+    display: grid;
+    grid-template-columns: 7.5em minmax(0, 1fr);
+    gap: 4px 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .slot-time {
+    font-family: var(--font-mono);
+    font-size: 0.86rem;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    padding-top: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .slot-body > strong {
+    display: block;
+    font-weight: 600;
+    font-size: 1.02rem;
+    margin-bottom: 4px;
+  }
+  .slot-body p {
+    margin: 0;
+    font-size: 0.94rem;
+    color: var(--ink-soft);
+  }
+  .slot--mark { background: var(--surface); }
+  .slot--mark .slot-time,
+  .slot--mark .slot-body { padding-left: 16px; }
+  .slot--mark .slot-body > strong { color: var(--blue); }
+  .slot--soft .slot-body > strong { font-weight: 500; color: var(--ink-soft); }
+
+  @media (max-width: 620px) {
+    .slot { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+    .slot--mark .slot-time, .slot--mark .slot-body { padding-left: 14px; }
+  }
+
+  /* ---------- Intent / criteria ---------- */
+  .intent-list {
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 22px;
+  }
+  .intent-list li {
+    padding-left: 20px;
+    border-left: 2px solid var(--blue);
+  }
+  .intent-list strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .intent-list span {
+    font-size: 0.94rem;
+    color: var(--ink-soft);
+  }
+
+  .criteria {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    font-size: 0.98rem;
+  }
+  .criteria tr { border-top: 1px solid var(--line); }
+  .criteria tr:last-child { border-bottom: 1px solid var(--line); }
+  .criteria th, .criteria td {
+    text-align: left;
+    padding: 16px 12px;
+    font-weight: 400;
+    vertical-align: top;
+  }
+  .criteria th {
+    width: 4.5em;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    padding-top: 19px;
+  }
+  .criteria td strong { font-weight: 600; }
+  .criteria td p { margin: 4px 0 0; font-size: 0.92rem; color: var(--ink-soft); }
+
+  .prep-list {
+    margin: 24px 0 0;
+    padding-left: 1.3em;
+  }
+  .prep-list li {
+    margin-bottom: 10px;
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+  }
+  .prep-list li strong { color: var(--ink); font-weight: 600; }
+
+  .entry {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-top: 32px;
+    padding: 20px 22px;
+    background: var(--surface);
+    border-radius: 12px;
+    font-size: 0.94rem;
+    color: var(--ink-soft);
+  }
+  .entry .dot {
+    flex: none;
+    width: 8px;
+    height: 8px;
+    margin-top: 9px;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+  .entry strong { color: var(--ink); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 44px 0 56px;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+  footer p { margin: 0 0 8px; }
+  footer .copyright {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="pagebar">
+  <div class="wrap pagebar-inner">
+    <a class="pagebar-logo" href="../" aria-label="GEMBA AI Challenge トップページ">
+      <img src="../images/gemba_ai_logo_transparent.png" alt="GEMBA AI Challenge">
+    </a>
+    <a class="backlink" href="../">トップへ戻る</a>
+  </div>
+</div>
+
+<main>
+
+  <div class="wrap pagehead">
+    <p class="eyebrow">Program</p>
+    <h1>2日間の<em>流れ</em></h1>
+    <p class="lede">事前プログラム1回と、本番2日間。1日目は現場を理解して<strong>どこから攻めるかを決め</strong>、2日目は<strong>形にして伝えます</strong>。</p>
+    <p class="lede">以下は現時点の想定です。時刻・内容は確定次第更新します。</p>
+    <p style="margin:24px 0 0;"><span class="badge badge--accent">2026.11.28–29</span> <span class="badge">想定</span></p>
+  </div>
+
+  <section id="shape">
+    <div class="wrap">
+      <p class="eyebrow">Shape</p>
+      <h2>全体の骨格</h2>
+      <p class="lede">3つの段に分かれます。事前に準備を済ませ、1日目に方向を決め、2日目に作って伝える。当日いきなり環境構築から始めることにならないよう、事前プログラムを置いています。</p>
+      <div class="stages">
+        <div class="stage">
+          <p class="stage-label">Pre</p>
+          <h3>事前プログラム</h3>
+          <p>チーム発表、ケースの事前公開、サンプルデータの配布、開発環境の準備。オンライン2時間。</p>
+        </div>
+        <div class="stage">
+          <p class="stage-label">Day 1</p>
+          <h3>現場を理解し、方向を決める</h3>
+          <p>ケース発表とデータの読み合わせ。午後に方向を決め、中間フィードバックで一度壊して組み直します。</p>
+        </div>
+        <div class="stage">
+          <p class="stage-label">Day 2</p>
+          <h3>形にして、伝える</h3>
+          <p>実装を進め、メンターに相談し、二段の締切で仕上げる。最終発表と審査、閉会式と交流会。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pre">
+    <div class="wrap">
+      <div class="dayhead">
+        <span class="num">Pre</span>
+        <h2>事前プログラム</h2>
+        <span class="badge">オンライン</span>
+        <span class="badge">11月中旬 想定</span>
+      </div>
+      <p class="daynote">本番の約2週間前に、オンラインで2時間。ここで課題とデータに触れておくことで、当日はすぐ中身の議論に入れます。</p>
+
+      <div class="rundown">
+        <div class="slot">
+          <span class="slot-time">19:00</span>
+          <span class="slot-body">
+            <strong>チーム発表・自己紹介</strong>
+            <p>チームは運営が編成します。参加動機と、2日間で伸ばしたいことを言葉にして共有します。</p>
+          </span>
+        </div>
+        <div class="slot slot--mark">
+          <span class="slot-time">19:30</span>
+          <span class="slot-body">
+            <strong>ケースの事前公開・サンプルデータの配布</strong>
+            <p>取り組む課題と、実際に使うデータの一部（全体の約1割）をこの日に渡します。構造を掴み、当日までに読み込んでおけます。</p>
+          </span>
+        </div>
+        <div class="slot">
+          <span class="slot-time">20:00</span>
+          <span class="slot-body">
+            <strong>インプット：AIを現場の価値に接続する</strong>
+            <p>技術を課題に接続する考え方と、審査で何を見るかを共有します。何を作れば評価されるのかを、最初にはっきりさせます。</p>
+          </span>
+        </div>
+        <div class="slot">
+          <span class="slot-time">20:40</span>
+          <span class="slot-body">
+            <strong>開発環境の準備</strong>
+            <p>データを読み込むところまでのサンプルコードを配布します。技術的な立ち上がりで差がつかないようにするためです。</p>
+          </span>
+        </div>
+        <div class="slot slot--soft">
+          <span class="slot-time">21:00</span>
+          <span class="slot-body">
+            <strong>終了。以降は各チームで自由に準備</strong>
+            <p>チーム内での役割分担や事前リサーチは、この期間に進めておけます。</p>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="day1">
+    <div class="wrap">
+      <div class="dayhead">
+        <span class="num">Day 1</span>
+        <h2>現場を理解し、方向を決める</h2>
+        <span class="badge">11月28日（土）</span>
+      </div>
+      <p class="daynote">1日目のゴールは、作り始めることではなく<strong>どこから攻めるかを決めること</strong>です。方向が決まっていない実装は、2日目に必ず行き詰まります。</p>
+
+      <div class="rundown">
+        <div class="slot">
+          <span class="slot-time">09:30</span>
+          <span class="slot-body">
+            <strong>受付・チーム着席</strong>
+          </span>
+        </div>
+        <div class="slot">
+          <span class="slot-time">10:00</span>
+          <span class="slot-body">
+            <strong>開会式・基調講演</strong>
+            <p>2日間の進め方と審査の観点を説明します。</p>
+          </span>
+        </div>
+        <div class="slot slot--mark">
+          <span class="slot-time">10:30</span>
+          <span class="slot-body">
+            <strong>ケース発表・データ全量公開</strong>
+            <p>事前に渡した範囲を含む、2年分すべてのデータを公開します。</p>
+          </span>
+        </div>
+        <div class="slot">
+          <span class="slot-time">11:00</span>
+          <span class="slot-body">
+            <strong>データの読み合わせ</strong>
+            <p>運営からデータの構成と、項目の意味を説明します。実際の現場のデータと同様に、表記のゆれや欠けが含まれていることも、ここで伝えます。</p>
+          </span>
+        </div>
+        <div class="slot">
+          <span class="slot-time">11:30</span>
+          <span class="slot-body">
+            <strong>プランニング① 現場を理解する</strong>
+            <p>誰が何に困っているのかを、データから読み取ります。課題の候補を広く洗い出す時間です。</p>
+          </span>
+        </div>
+        <div class="slot slot--soft">
+          <span class="slot-time">12:30</span>
+          <span class="slot-body"><strong>昼食</strong></span>
+        </div>
+        <div class="slot">
+          <span class="slot-time">13:30</span>
+          <span class="slot-body">
+            <strong>セミナー（選択型）</strong>
+            <p>協賛企業によるセッション。技術の実装とビジネスの設計、それぞれのトラックから選べます。</p>
+          </span>
+        </div>
+        <div class="slot">
+          <span class="slot-time">14:30</span>
+          <span class="slot-body">
+            <strong>プランニング② 方向を決める</strong>
+            <p>洗い出した候補から、どこを攻めるかを1つ選びます。なぜその方向なのかを、チームの言葉で言える状態にします。</p>
+          </span>
+        </div>
+        <div class="slot slot--mark">
+          <span class="slot-time">16:00</span>
+          <span class="slot-body">
+            <strong>中間フィードバック</strong>
+            <p>各チーム5分。「どの方向を選んだか」と「なぜそれを選んだか」だけを話します。メンターと他チームから指摘を受けます。この時点で成果物は不要です。</p>
+          </span>
+        </div>
+        <div class="slot">
+          <span class="slot-time">17:00</span>
+          <span class="slot-body">
+            <strong>プランニング③ 方向を組み直し、手を動かし始める</strong>
+            <p>指摘を受けて方向を修正します。ここで大きく変えても構いません。固まったチームは実装に入ります。</p>
+          </span>
+        </div>
+        <div class="slot slot--soft">
+          <span class="slot-time">19:00</span>
+          <span class="slot-body">
+            <strong>1日目終了</strong>
+            <p>以降の作業は各チームの判断に任せます。</p>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="day2">
+    <div class="wrap">
+      <div class="dayhead">
+        <span class="num">Day 2</span>
+        <h2>形にして、伝える</h2>
+        <span class="badge">11月29日（日）</span>
+      </div>
+      <p class="daynote">2日目は、作る時間と伝える時間をはっきり分けます。締切を二段に置くのは、資料づくりに追われて中身が薄くなるのを防ぐためです。</p>
+
+      <div class="rundown">
+        <div class="slot">
+          <span class="slot-time">09:00</span>
+          <span class="slot-body">
+            <strong>朝会</strong>
+            <p>各チームが前日の到達点と今日やることを1分で共有します。</p>
+          </span>
+        </div>
+        <div class="slot">
+          <span class="slot-time">09:30</span>
+          <span class="slot-body">
+            <strong>プランニング④ 実装</strong>
+            <p>選んだ方向を、動くものと数字に落とします。</p>
+          </span>
+        </div>
+        <div class="slot slot--mark">
+          <span class="slot-time">11:00</span>
+          <span class="slot-body">
+            <strong>コンサルティングタイム</strong>
+            <p>メンターが各チームを巡回します。詰まっている点、詰め切れていない前提を相談できます。</p>
+          </span>
+        </div>
+        <div class="slot slot--soft">
+          <span class="slot-time">12:00</span>
+          <span class="slot-body"><strong>昼食</strong></span>
+        </div>
+        <div class="slot slot--mark">
+          <span class="slot-time">13:00</span>
+          <span class="slot-body">
+            <strong>1次締切：提案の骨子を提出</strong>
+            <p>選んだ方向、その理由、効き方の見立てを提出します。資料の完成度は問いません。</p>
+          </span>
+        </div>
+        <div class="slot">
+          <span class="slot-time">13:15</span>
+          <span class="slot-body">
+            <strong>プレゼンセッション</strong>
+            <p>伝え方の指導を受けます。何から話すか、質疑にどう備えるか。</p>
+          </span>
+        </div>
+        <div class="slot">
+          <span class="slot-time">14:00</span>
+          <span class="slot-body">
+            <strong>プレゼン準備</strong>
+            <p>資料とデモを仕上げます。</p>
+          </span>
+        </div>
+        <div class="slot slot--mark">
+          <span class="slot-time">15:00</span>
+          <span class="slot-body">
+            <strong>最終締切：資料・デモの提出</strong>
+          </span>
+        </div>
+        <div class="slot">
+          <span class="slot-time">15:15</span>
+          <span class="slot-body">
+            <strong>最終発表</strong>
+            <p>全チームが発表します。1チームあたり発表と質疑で10分程度を想定しています。</p>
+          </span>
+        </div>
+        <div class="slot">
+          <span class="slot-time">16:45</span>
+          <span class="slot-body">
+            <strong>審査・振り返りワーク</strong>
+            <p>審査の裏で、2日間で何ができるようになったかを各自が言語化します。</p>
+          </span>
+        </div>
+        <div class="slot slot--mark">
+          <span class="slot-time">17:30</span>
+          <span class="slot-body">
+            <strong>結果発表・閉会式</strong>
+          </span>
+        </div>
+        <div class="slot slot--soft">
+          <span class="slot-time">18:00</span>
+          <span class="slot-body">
+            <strong>交流会</strong>
+            <p>他チームの参加者、メンター、協賛企業の方々との懇親の場です。</p>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="intent">
+    <div class="wrap">
+      <p class="eyebrow">Design</p>
+      <h2>この流れにした理由</h2>
+      <ul class="intent-list">
+        <li>
+          <strong>1日目に「方向を決める」時間を厚く置いた</strong>
+          <span>審査で最も重く見るのは、何を作ったかより<strong>どこから攻めると決めたか</strong>です。決める前に手を動かし始めたチームは、2日目に引き返せなくなります。</span>
+        </li>
+        <li>
+          <strong>中間フィードバックでは成果物を見ない</strong>
+          <span>聞くのは「どの方向を選んだか」と「なぜそれを選んだか」だけです。作ったものを見せる場にすると、方向を修正する機会が失われます。</span>
+        </li>
+        <li>
+          <strong>締切を二段に分けた</strong>
+          <span>1次締切で中身を固定してから、伝え方に取りかかります。資料づくりに追われて中身が薄くなるのを防ぐためです。</span>
+        </li>
+        <li>
+          <strong>データは事前に一部、当日に全量</strong>
+          <span>当日いきなり環境構築から始めることにならないよう、構造を掴める分量を先に渡します。一方で全量は当日まで出しません。</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="criteria">
+    <div class="wrap">
+      <p class="eyebrow">Criteria</p>
+      <h2>審査で見るもの</h2>
+      <p class="lede">この順で見ます。精度を競うコンテストではありません。同じゴールに対して、違う筋道を持ち寄ってください。</p>
+      <table class="criteria">
+        <tr>
+          <th>1</th>
+          <td>
+            <strong>アプローチの筋</strong>
+            <p>なぜその方向を選んだのか。現場の誰が、いつ、どう使うのか。</p>
+          </td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>
+            <strong>効き方の理屈</strong>
+            <p>その方向で目標の数字が動く筋道が立っているか。</p>
+          </td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>
+            <strong>実装の完成度</strong>
+            <p>実際に動くか。どこまで作り切ったか。</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="prep">
+    <div class="wrap">
+      <p class="eyebrow">Preparation</p>
+      <h2>持ち物・事前準備<span class="badge" style="margin-left:10px;">調整中</span></h2>
+      <ul class="prep-list">
+        <li><strong>パソコン</strong>（充電器も）。データの読み込みと分析ができる環境を各自で用意してください。</li>
+        <li><strong>実行環境</strong>。表計算ソフトだけでも取り組めるよう設計していますが、プログラムを書ける環境があると扱える範囲が広がります。</li>
+        <li><strong>事前プログラムへの参加</strong>。チーム発表とデータ配布を行うため、参加が前提となります。</li>
+      </ul>
+      <div class="entry">
+        <span class="dot" aria-hidden="true"></span>
+        <span><strong>生成AIサービスの利用方法や費用の扱いは調整中です。</strong>確定次第、本ページにて公開します。</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>本ページの時刻・内容はすべて現時点の想定です。確定次第あらためてお知らせします。</p>
+    <p>主催：GEMBA AI Challenge 運営チーム</p>
+    <p class="copyright">© 2026 GEMBA AI Challenge 運営チーム</p>
+  </div>
+</footer>
+
+</body>
+</html>

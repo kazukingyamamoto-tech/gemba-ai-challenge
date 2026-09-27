@@ -36,7 +36,9 @@ bridge AI 主催コンテスト「GEMBA AI Challenge」のケース設計に関�
 | ファイル | 内容 |
 | --- | --- |
 | [site/README.md](site/README.md) | **LP作業のルール**：リポジトリの役割分担、ブランチ・コミット規約、公開してはいけないもの |
-| [site/index.html](site/index.html) | 公式LPの下書き（公開先は bri-dge-ai/ai-business-contest-lp） |
+| [site/index.html](site/index.html) | 公式LPトップページの下書き（公開先は bri-dge-ai/ai-business-contest-lp） |
+| [site/program/index.html](site/program/index.html) | 「2日間の流れ」ページのたたき台 |
+| [site/gaps.md](site/gaps.md) | 公開中のLPと検討内容の齟齬の整理 |
 
 ## 共有資料
 
