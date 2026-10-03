@@ -167,12 +167,6 @@
     margin: 0 0 24px;
     text-wrap: balance;
   }
-  h3.subhead {
-    font-weight: 600;
-    font-size: 1.06rem;
-    margin: 40px 0 16px;
-    letter-spacing: 0.01em;
-  }
   .lede {
     max-width: 42em;
     font-size: 1.02rem;
@@ -281,64 +275,13 @@
     font-size: 0.94rem;
     color: var(--ink-soft);
   }
-  .slot--mark { background: var(--surface); }
-  .slot--mark .slot-time,
-  .slot--mark .slot-body { padding-left: 16px; }
-  .slot--mark .slot-body > strong { color: var(--blue); }
   .slot--soft .slot-body > strong { font-weight: 500; color: var(--ink-soft); }
 
   @media (max-width: 620px) {
     .slot { grid-template-columns: minmax(0, 1fr); gap: 6px; }
-    .slot--mark .slot-time, .slot--mark .slot-body { padding-left: 14px; }
   }
 
-  /* ---------- Intent / criteria ---------- */
-  .intent-list {
-    margin: 28px 0 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    gap: 22px;
-  }
-  .intent-list li {
-    padding-left: 20px;
-    border-left: 2px solid var(--blue);
-  }
-  .intent-list strong {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .intent-list span {
-    font-size: 0.94rem;
-    color: var(--ink-soft);
-  }
-
-  .criteria {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 24px;
-    font-size: 0.98rem;
-  }
-  .criteria tr { border-top: 1px solid var(--line); }
-  .criteria tr:last-child { border-bottom: 1px solid var(--line); }
-  .criteria th, .criteria td {
-    text-align: left;
-    padding: 16px 12px;
-    font-weight: 400;
-    vertical-align: top;
-  }
-  .criteria th {
-    width: 4.5em;
-    font-family: var(--font-mono);
-    font-size: 0.74rem;
-    letter-spacing: 0.06em;
-    color: var(--ink-soft);
-    padding-top: 19px;
-  }
-  .criteria td strong { font-weight: 600; }
-  .criteria td p { margin: 4px 0 0; font-size: 0.92rem; color: var(--ink-soft); }
-
+  /* ---------- Preparation ---------- */
   .prep-list {
     margin: 24px 0 0;
     padding-left: 1.3em;
@@ -403,7 +346,6 @@
   <div class="wrap pagehead">
     <p class="eyebrow">Program</p>
     <h1>2日間の<em>流れ</em></h1>
-    <p class="lede">事前プログラム1回と、本番2日間。1日目は現場を理解して<strong>どこから攻めるかを決め</strong>、2日目は<strong>形にして伝えます</strong>。</p>
     <p class="lede">以下は現時点の想定です。時刻・内容は確定次第更新します。</p>
     <p style="margin:24px 0 0;"><span class="badge badge--accent">2026.11.28–29</span> <span class="badge">想定</span></p>
   </div>
@@ -412,7 +354,6 @@
     <div class="wrap">
       <p class="eyebrow">Shape</p>
       <h2>全体の骨格</h2>
-      <p class="lede">3つの段に分かれます。事前に準備を済ませ、1日目に方向を決め、2日目に作って伝える。当日いきなり環境構築から始めることにならないよう、事前プログラムを置いています。</p>
       <div class="stages">
         <div class="stage">
           <p class="stage-label">Pre</p>
@@ -448,35 +389,35 @@
           <span class="slot-time">19:00</span>
           <span class="slot-body">
             <strong>チーム発表・自己紹介</strong>
-            <p>チームは運営が編成します。参加動機と、2日間で伸ばしたいことを言葉にして共有します。</p>
+            <p>チームは運営が編成します。事前に他の参加者とチームを組んでおくことも可能です。自己紹介では、参加動機や、2日間で伸ばしたいことなどを共有します。</p>
           </span>
         </div>
-        <div class="slot slot--mark">
+        <div class="slot">
           <span class="slot-time">19:30</span>
           <span class="slot-body">
             <strong>ケースの事前公開・サンプルデータの配布</strong>
-            <p>取り組む課題と、実際に使うデータの一部（全体の約1割）をこの日に渡します。構造を掴み、当日までに読み込んでおけます。</p>
+            <p>取り組む課題と、実際に使うデータの一部をこの日に渡します。構造を掴み、当日までに読み込んでおけます。</p>
           </span>
         </div>
         <div class="slot">
           <span class="slot-time">20:00</span>
           <span class="slot-body">
             <strong>インプット：AIを現場の価値に接続する</strong>
-            <p>技術を課題に接続する考え方と、審査で何を見るかを共有します。何を作れば評価されるのかを、最初にはっきりさせます。</p>
+            <p>技術を課題に接続する考え方と、審査で何を見るかを共有します。本コンテストでの評価基準を明確にします。</p>
           </span>
         </div>
         <div class="slot">
           <span class="slot-time">20:40</span>
           <span class="slot-body">
             <strong>開発環境の準備</strong>
-            <p>データを読み込むところまでのサンプルコードを配布します。技術的な立ち上がりで差がつかないようにするためです。</p>
+            <p>データを読み込むところまでのサンプルコードを配布します。</p>
           </span>
         </div>
         <div class="slot slot--soft">
           <span class="slot-time">21:00</span>
           <span class="slot-body">
             <strong>終了。以降は各チームで自由に準備</strong>
-            <p>チーム内での役割分担や事前リサーチは、この期間に進めておけます。</p>
+            <p>チーム内での役割分担や事前リサーチを、本番２日間が始まるまでの期間に進めておけます。</p>
           </span>
         </div>
       </div>
@@ -490,7 +431,7 @@
         <h2>現場を理解し、方向を決める</h2>
         <span class="badge">11月28日（土）</span>
       </div>
-      <p class="daynote">1日目のゴールは、作り始めることではなく<strong>どこから攻めるかを決めること</strong>です。方向が決まっていない実装は、2日目に必ず行き詰まります。</p>
+      <p class="daynote">1日目は、<strong>どこから攻めるか</strong>を決め、2日目に何を作れるかを考えます。</p>
 
       <div class="rundown">
         <div class="slot">
@@ -506,7 +447,7 @@
             <p>2日間の進め方と審査の観点を説明します。</p>
           </span>
         </div>
-        <div class="slot slot--mark">
+        <div class="slot">
           <span class="slot-time">10:30</span>
           <span class="slot-body">
             <strong>ケース発表・データ全量公開</strong>
@@ -517,7 +458,7 @@
           <span class="slot-time">11:00</span>
           <span class="slot-body">
             <strong>データの読み合わせ</strong>
-            <p>運営からデータの構成と、項目の意味を説明します。実際の現場のデータと同様に、表記のゆれや欠けが含まれていることも、ここで伝えます。</p>
+            <p>運営からデータの構成と、項目の意味を説明します。</p>
           </span>
         </div>
         <div class="slot">
@@ -545,18 +486,18 @@
             <p>洗い出した候補から、どこを攻めるかを1つ選びます。なぜその方向なのかを、チームの言葉で言える状態にします。</p>
           </span>
         </div>
-        <div class="slot slot--mark">
+        <div class="slot">
           <span class="slot-time">16:00</span>
           <span class="slot-body">
             <strong>中間フィードバック</strong>
-            <p>各チーム5分。「どの方向を選んだか」と「なぜそれを選んだか」だけを話します。メンターと他チームから指摘を受けます。この時点で成果物は不要です。</p>
+            <p>各チーム5分。「どの方向を選んだか」と「なぜそれを選んだか」を全体で共有します。メンターと他チームから指摘を受けます。</p>
           </span>
         </div>
         <div class="slot">
           <span class="slot-time">17:00</span>
           <span class="slot-body">
             <strong>プランニング③ 方向を組み直し、手を動かし始める</strong>
-            <p>指摘を受けて方向を修正します。ここで大きく変えても構いません。固まったチームは実装に入ります。</p>
+            <p>指摘を受けて方向を修正します。固まったチームはアイデア実装に入ります。</p>
           </span>
         </div>
         <div class="slot slot--soft">
@@ -594,7 +535,7 @@
             <p>選んだ方向を、動くものと数字に落とします。</p>
           </span>
         </div>
-        <div class="slot slot--mark">
+        <div class="slot">
           <span class="slot-time">11:00</span>
           <span class="slot-body">
             <strong>コンサルティングタイム</strong>
@@ -605,7 +546,7 @@
           <span class="slot-time">12:00</span>
           <span class="slot-body"><strong>昼食</strong></span>
         </div>
-        <div class="slot slot--mark">
+        <div class="slot">
           <span class="slot-time">13:00</span>
           <span class="slot-body">
             <strong>1次締切：提案の骨子を提出</strong>
@@ -626,7 +567,7 @@
             <p>資料とデモを仕上げます。</p>
           </span>
         </div>
-        <div class="slot slot--mark">
+        <div class="slot">
           <span class="slot-time">15:00</span>
           <span class="slot-body">
             <strong>最終締切：資料・デモの提出</strong>
@@ -646,7 +587,7 @@
             <p>審査の裏で、2日間で何ができるようになったかを各自が言語化します。</p>
           </span>
         </div>
-        <div class="slot slot--mark">
+        <div class="slot">
           <span class="slot-time">17:30</span>
           <span class="slot-body">
             <strong>結果発表・閉会式</strong>
@@ -660,62 +601,6 @@
           </span>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="intent">
-    <div class="wrap">
-      <p class="eyebrow">Design</p>
-      <h2>この流れにした理由</h2>
-      <ul class="intent-list">
-        <li>
-          <strong>1日目に「方向を決める」時間を厚く置いた</strong>
-          <span>審査で最も重く見るのは、何を作ったかより<strong>どこから攻めると決めたか</strong>です。決める前に手を動かし始めたチームは、2日目に引き返せなくなります。</span>
-        </li>
-        <li>
-          <strong>中間フィードバックでは成果物を見ない</strong>
-          <span>聞くのは「どの方向を選んだか」と「なぜそれを選んだか」だけです。作ったものを見せる場にすると、方向を修正する機会が失われます。</span>
-        </li>
-        <li>
-          <strong>締切を二段に分けた</strong>
-          <span>1次締切で中身を固定してから、伝え方に取りかかります。資料づくりに追われて中身が薄くなるのを防ぐためです。</span>
-        </li>
-        <li>
-          <strong>データは事前に一部、当日に全量</strong>
-          <span>当日いきなり環境構築から始めることにならないよう、構造を掴める分量を先に渡します。一方で全量は当日まで出しません。</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="criteria">
-    <div class="wrap">
-      <p class="eyebrow">Criteria</p>
-      <h2>審査で見るもの</h2>
-      <p class="lede">この順で見ます。精度を競うコンテストではありません。同じゴールに対して、違う筋道を持ち寄ってください。</p>
-      <table class="criteria">
-        <tr>
-          <th>1</th>
-          <td>
-            <strong>アプローチの筋</strong>
-            <p>なぜその方向を選んだのか。現場の誰が、いつ、どう使うのか。</p>
-          </td>
-        </tr>
-        <tr>
-          <th>2</th>
-          <td>
-            <strong>効き方の理屈</strong>
-            <p>その方向で目標の数字が動く筋道が立っているか。</p>
-          </td>
-        </tr>
-        <tr>
-          <th>3</th>
-          <td>
-            <strong>実装の完成度</strong>
-            <p>実際に動くか。どこまで作り切ったか。</p>
-          </td>
-        </tr>
-      </table>
     </div>
   </section>
 
