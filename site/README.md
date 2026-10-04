@@ -68,6 +68,6 @@ LP に載せる内容の出どころ。
 
 | LP のセクション | 出どころ |
 | --- | --- |
-| Case | [`../share/case-list.md`](../share/case-list.md) の配布用ケース文と成功の形 |
-| Difference / Concept | [`../phase2/01-case-deepdive.md`](../phase2/01-case-deepdive.md) の「ケース設計の考え方」 |
+| Case | [`../cases/`](../cases/) の配布用ケース文と成功の形 |
+| Difference / Concept | [`../design/01-case-design.md`](../design/01-case-design.md) の「ケース設計の考え方」 |
 | Overview | 運営で確定した開催情報 |

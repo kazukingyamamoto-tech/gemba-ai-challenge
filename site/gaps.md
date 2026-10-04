@@ -1,7 +1,7 @@
 # 現状のLPと検討内容の齟齬
 
 作成：bridge AI　2026-09-27
-対象：公開中の [https://bri-dge-ai.github.io/ai-business-contest-lp/](https://bri-dge-ai.github.io/ai-business-contest-lp/)（`index.html`）と、`phase2/` および `share/case-list.md` の検討内容
+対象：公開中の [https://bri-dge-ai.github.io/ai-business-contest-lp/](https://bri-dge-ai.github.io/ai-business-contest-lp/)（`index.html`）と、`cases/` および `design/` の検討内容
 
 LPは2026年8月時点で作られており、その後のケース設計・データ設計の決定が反映されていない。反映が必要な箇所と、そもそも運営として決まっていない箇所を分けて整理する。
 

@@ -6,7 +6,7 @@
 
 > 専門用語は [`glossary.md`](../glossary.md) を参照。
 > 3ケースの比較は [`../share/case-comparison.md`](../share/case-comparison.md)。
-> ケース設計の考え方は [`01-case-deepdive.md`](01-case-deepdive.md) 第1章が共通の土台。
+> ケース設計の考え方は [`../design/01-case-design.md`](../design/01-case-design.md) が共通の土台。
 
 ---
 
